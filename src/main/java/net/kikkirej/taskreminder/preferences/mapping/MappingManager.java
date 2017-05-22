@@ -48,7 +48,7 @@ public class MappingManager {
 	private Map<String, MappingObject> getMappingsMap() {
 		Map<String, MappingObject> map = new HashMap<String, MappingObject>();
 		for (MappingObject mappingObject : mappingsList) {
-			map.put(mappingObject.name,mappingObject);
+			map.put(mappingObject.name, mappingObject);
 		}
 		return map;
 	}

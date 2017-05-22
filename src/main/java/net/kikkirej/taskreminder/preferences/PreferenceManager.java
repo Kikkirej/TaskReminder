@@ -1,14 +1,25 @@
 package net.kikkirej.taskreminder.preferences;
 
+import java.io.IOException;
+import java.util.Properties;
+
 public class PreferenceManager {
 	/** Die Instanz des Singletons PreferenceManager */
 	private static PreferenceManager instance;
+	private Properties properties;
 
 	/** 
 	 * Ein privater Konstruktor, damit die Instanz nur über die statische Methode aufgerufen wird.
 	 */
 	private PreferenceManager() {
-		//TODO Implementieren der Initalisierung des Typs
+		PropertiesLoader propertiesLoader = new PropertiesLoader("config.properties");
+		try {
+			properties = propertiesLoader.load();
+		} catch (IOException e) {
+			System.err.println("Das Laden der Properties ist fehlgeschlagen.");
+			e.printStackTrace();
+			System.exit(1);
+		}
 	}
 
 	/** 
@@ -22,7 +33,10 @@ public class PreferenceManager {
 	}
 	
 	public String get(String key){
-		//TODO
-		return null;
+		return properties.getProperty(key);
+	}
+	
+	public String[] getCSVValues(String key, Character separator){
+		return get(key).split(separator.toString());
 	}
 }
