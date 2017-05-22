@@ -25,5 +25,10 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.5</version>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>LATEST</version>
+		</dependency>
 	</dependencies>
 </project>
