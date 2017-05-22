@@ -1,5 +1,7 @@
 package net.kikkirej.taskreminder;
 
+import org.apache.commons.mail.EmailException;
+
 import net.kikkirej.taskreminder.mail.MailClient;
 import net.kikkirej.taskreminder.mail.MailGenerator;
 import net.kikkirej.taskreminder.model.MailObject;
@@ -22,7 +24,12 @@ public class TaskRunner implements Runnable {
 	public void run() {
 		MailObject mail = getMail();
 		MailClient mailClient = new MailClient();
-		mailClient.sendMail(mail);
+		try {
+			mailClient.sendMail(mail);
+		} catch (EmailException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private MailObject getMail() {
