@@ -10,4 +10,6 @@ public class MailObject {
 	public String subject;
 	
 	public String Message;
+	
+	public MailserverObject mailserver;
 }
