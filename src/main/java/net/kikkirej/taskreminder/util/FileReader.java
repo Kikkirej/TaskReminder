@@ -42,4 +42,13 @@ public class FileReader {
 		return returnValue;
 	}
 	
+	@Override
+	public String toString() {
+		try {
+			return getAllText();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
