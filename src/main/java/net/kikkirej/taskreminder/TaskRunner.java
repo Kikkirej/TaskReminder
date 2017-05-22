@@ -6,7 +6,7 @@ import net.kikkirej.taskreminder.model.MailObject;
 import net.kikkirej.taskreminder.model.MappingObject;
 import net.kikkirej.taskreminder.model.TaskObject;
 import net.kikkirej.taskreminder.network.Hostchecker;
-import net.kikkirej.taskreminder.preferences.MappingManager;
+import net.kikkirej.taskreminder.preferences.mapping.MappingManager;
 
 public class TaskRunner implements Runnable {
 

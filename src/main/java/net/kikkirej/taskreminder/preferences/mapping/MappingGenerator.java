@@ -1,4 +1,4 @@
-package net.kikkirej.taskreminder.preferences;
+package net.kikkirej.taskreminder.preferences.mapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +28,11 @@ class MappingGenerator {
 		if(splitedLine.length != 4){
 			throw new MappingInvalidException("Das Mapping hat die falsche Anzahl Bestandteile:" + splitedLine.length);
 		}
+		MappingObject mappingObject = getMappingObjectOfArraz(splitedLine);
+		return mappingObject;
+	}
+
+	private MappingObject getMappingObjectOfArraz(String[] splitedLine) {
 		MappingObject mappingObject = new MappingObject();
 		mappingObject.name = splitedLine[0];
 		mappingObject.hostname = splitedLine[1].replace(" ", "");

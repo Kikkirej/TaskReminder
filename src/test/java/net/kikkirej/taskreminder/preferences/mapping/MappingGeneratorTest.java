@@ -1,4 +1,4 @@
-package net.kikkirej.taskreminder.preferences;
+package net.kikkirej.taskreminder.preferences.mapping;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +8,7 @@ import java.util.List;
 import org.junit.Test;
 
 import net.kikkirej.taskreminder.model.MappingObject;
+import net.kikkirej.taskreminder.preferences.mapping.MappingGenerator;
 
 public class MappingGeneratorTest {
 

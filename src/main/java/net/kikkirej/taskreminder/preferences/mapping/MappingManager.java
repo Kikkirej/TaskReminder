@@ -1,4 +1,4 @@
-package net.kikkirej.taskreminder.preferences;
+package net.kikkirej.taskreminder.preferences.mapping;
 
 import static net.kikkirej.taskreminder.preferences.PreferenceKeys.*;
 
@@ -9,6 +9,7 @@ import java.util.Map;
 
 import net.kikkirej.taskreminder.exceptions.MappingInvalidException;
 import net.kikkirej.taskreminder.model.MappingObject;
+import net.kikkirej.taskreminder.preferences.PreferenceManager;
 import net.kikkirej.taskreminder.util.FileReader;
 
 public class MappingManager {
