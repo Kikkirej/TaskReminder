@@ -1,6 +1,8 @@
 package net.kikkirej.taskreminder.util;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.List;
@@ -50,5 +52,9 @@ public class FileReader {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public FileInputStream getFileInputStream() throws FileNotFoundException {
+		return new FileInputStream(file);
 	}
 }
