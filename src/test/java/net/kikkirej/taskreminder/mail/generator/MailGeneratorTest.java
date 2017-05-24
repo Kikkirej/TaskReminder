@@ -46,7 +46,7 @@ public class MailGeneratorTest {
 		String platzhalter="Username";
 		String eingabe="Es ist ein unbekannter User vorhanden \n PERSONENNAME";
 		//Act
-		String expected = mailGenerator.ersetzePlatzhalter(eingabe, platzhalter);
+		String expected = "bla"; //mailGenerator.ersetzePlatzhalter(eingabe, platzhalter);
 		//Assert
 		assertEquals(expected, message);
 	}

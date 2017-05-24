@@ -17,7 +17,7 @@ public class MailGenerator {
 		String path = "";
 		String admin = "";
 		mail.Message = erzeugeMessage(path);
-		//Empfänger ist der, der in der Konfig als Admin eingetragen ist
+		//Empfänger ist der, der in der Konfig als Admin eingetragen ist.
 		mail.recipents.add(admin);
 		return mail;
 	}
