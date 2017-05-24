@@ -37,18 +37,5 @@ public class MailGeneratorTest {
 		assertEquals(expected.Message, message);
 	}
 	
-	
-	@Test
-	public void ersetzePlatzhalterTest() throws Exception{
-		//Arrange
-		String message="Es ist ein unbekannter User vorhanden \n Kudo";
-		
-		String platzhalter="Username";
-		String eingabe="Es ist ein unbekannter User vorhanden \n PERSONENNAME";
-		//Act
-		String expected = "bla"; //mailGenerator.ersetzePlatzhalter(eingabe, platzhalter);
-		//Assert
-		assertEquals(expected, message);
-	}
 
 }

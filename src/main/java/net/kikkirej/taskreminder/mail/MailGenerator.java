@@ -10,13 +10,13 @@ import net.kikkirej.taskreminder.util.FileReader;
 public class MailGenerator {
 
 	MailObject mail = new MailObject();
-	FileReader file;
-	String pathPlaceholder;
 	
 	public MailObject getNewUserMail(TaskObject taskObject) {
+		//Pfad und admin erfährt man aus der Konfigdatei
 		String path = "";
 		String admin = "";
-		mail.Message = erzeugeMessage(path);
+		//Pfad zur jeweiligen Vorlage wird übergeben und das Resultat in der Message der Mail gespeichert
+		mail.Message = new MessageGenerator().holeDaten(path);
 		//Empfänger ist der, der in der Konfig als Admin eingetragen ist
 		mail.recipents.add(admin);
 		return mail;
@@ -34,28 +34,6 @@ public class MailGenerator {
 		
 	}
 	
-	private String erzeugeMessage(String path) {
-		String message;
-		try {
-			message = new FileReader("path").getAllText();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			message = "";
-		}
-		return ersetzePlatzhalter(message);
-	}
-
-	public String ersetzePlatzhalter(String message) {
-		String platzhalter;
-		try {
-			platzhalter = new FileReader(pathPlaceholder).getAllText();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		platzhalter = "";
-		return message;
-	}
+	
 
 }
