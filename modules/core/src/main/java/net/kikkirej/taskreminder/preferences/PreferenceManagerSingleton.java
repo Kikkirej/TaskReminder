@@ -12,7 +12,7 @@ public class PreferenceManagerSingleton {
 	 * Ein privater Konstruktor, damit die Instanz nur über die statische Methode aufgerufen wird.
 	 */
 	private PreferenceManagerSingleton() {
-		PropertiesLoader propertiesLoader = new PropertiesLoader("config.properties");
+		PropertiesLoader propertiesLoader = new PropertiesLoader("../conf/config.properties");
 		try {
 			properties = propertiesLoader.load();
 		} catch (IOException e) {

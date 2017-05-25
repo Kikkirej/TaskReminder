@@ -6,5 +6,7 @@
   <packaging>pom</packaging>
   <modules>
   	<module>modules/core</module>
+  	
+  	<module>solutions/deployment</module>
   </modules>
 </project>
