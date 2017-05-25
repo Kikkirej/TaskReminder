@@ -2,14 +2,9 @@ package net.kikkirej.taskreminder.mail;
 
 import java.io.IOException;
 
-import net.kikkirej.taskreminder.mail.plcaeholder.PlaceholderTask;
-import net.kikkirej.taskreminder.mail.plcaeholder.PlaceholderUser;
 import net.kikkirej.taskreminder.model.MailObject;
 import net.kikkirej.taskreminder.model.MappingObject;
 import net.kikkirej.taskreminder.model.TaskObject;
-import net.kikkirej.taskreminder.preferences.PreferenceKeys;
-import net.kikkirej.taskreminder.preferences.PreferenceManagerSingleton;
-import net.kikkirej.taskreminder.util.DefaultFileReader;
 
 public class MailGenerator {
 
