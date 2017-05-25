@@ -1,6 +1,6 @@
 Sehr geehrte Damen und Herren,
 
-der  "{USER}" scheint heute nicht da zu sein. 
+der "{USER}" scheint heute nicht da zu sein. 
 
 Für diese Person liegt die Aufgabe "{TASK}" an.
 
