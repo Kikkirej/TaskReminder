@@ -9,7 +9,7 @@ public class MailObject {
 	
 	public String subject;
 	
-	public String Message;
+	public String message;
 	
 	public MailserverObject mailserver;
 }

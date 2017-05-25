@@ -2,24 +2,33 @@ package net.kikkirej.taskreminder.mail;
 
 import java.io.IOException;
 
+import net.kikkirej.taskreminder.mail.plcaeholder.PlaceholderTask;
+import net.kikkirej.taskreminder.mail.plcaeholder.PlaceholderUser;
 import net.kikkirej.taskreminder.model.MailObject;
 import net.kikkirej.taskreminder.model.MappingObject;
 import net.kikkirej.taskreminder.model.TaskObject;
-import net.kikkirej.taskreminder.util.FileReader;
+import net.kikkirej.taskreminder.preferences.PreferenceKeys;
+import net.kikkirej.taskreminder.preferences.PreferenceManagerSingleton;
+import net.kikkirej.taskreminder.util.DefaultFileReader;
 
 public class MailGenerator {
 
-	MailObject mail = new MailObject();
 	
-	public MailObject getNewUserMail(TaskObject taskObject) {
-		//Pfad und admin erfährt man aus der Konfigdatei
-		String path = "";
-		String admin = "";
-		//Pfad zur jeweiligen Vorlage wird übergeben und das Resultat in der Message der Mail gespeichert
-		mail.Message = new MessageGenerator().holeDaten(path);
-		//Empfänger ist der, der in der Konfig als Admin eingetragen ist
-		mail.recipents.add(admin);
-		return mail;
+	private MailObject mailObject;
+
+	public MailGenerator() {
+		mailObject = new MailObject();
+		
+	}
+	
+	public MailObject getNewUserMail(TaskObject taskObject) throws IOException {
+		String mailUnknownUserPath = PreferenceManagerSingleton.getInstance().get(PreferenceKeys.MAILTEXTUNKOWNUSERPATH);
+		DefaultFileReader defaultFileReader = new DefaultFileReader(mailUnknownUserPath);
+		MailTextGenerator mailTextGenerator = new MailTextGenerator(defaultFileReader);
+		mailTextGenerator.addPlaceholder(new PlaceholderTask(taskObject));
+		mailTextGenerator.addPlaceholder(new PlaceholderUser(taskObject));
+		mailObject.message = mailTextGenerator.getText();
+		return mailObject;
 	}
 
 	public MailObject getSimpleReminder(MappingObject mapping, String taskname) {

@@ -9,8 +9,8 @@ import java.util.Map;
 
 import net.kikkirej.taskreminder.exceptions.MappingInvalidException;
 import net.kikkirej.taskreminder.model.MappingObject;
-import net.kikkirej.taskreminder.preferences.PreferenceManager;
-import net.kikkirej.taskreminder.util.FileReader;
+import net.kikkirej.taskreminder.preferences.PreferenceManagerSingleton;
+import net.kikkirej.taskreminder.util.DefaultFileReader;
 
 public class MappingManager {
 	
@@ -40,8 +40,8 @@ public class MappingManager {
 	}
 
 	private List<String> getMappingText() throws IOException {
-		String pathToMappingDoc = PreferenceManager.getInstance().get(PATHTOMAPPINGDOCUMENT);
-		FileReader fileReader = new FileReader(pathToMappingDoc);
+		String pathToMappingDoc = PreferenceManagerSingleton.getInstance().get(PATHTOMAPPINGDOCUMENT);
+		DefaultFileReader fileReader = new DefaultFileReader(pathToMappingDoc);
 		return fileReader.getLineArray();
 	}
 

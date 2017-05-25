@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import net.kikkirej.taskreminder.util.FileReader;
+import net.kikkirej.taskreminder.util.DefaultFileReader;
 
 class PropertiesLoader {
 
@@ -32,7 +32,7 @@ class PropertiesLoader {
 	}
 
 	private FileInputStream getFileInputStream(String pathToFile) throws FileNotFoundException {
-		FileReader fileReader = new FileReader(pathToFile);
+		DefaultFileReader fileReader = new DefaultFileReader(pathToFile);
 		return fileReader.getFileInputStream();
 	}
 	

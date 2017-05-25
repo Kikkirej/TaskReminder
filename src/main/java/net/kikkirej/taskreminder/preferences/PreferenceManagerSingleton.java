@@ -3,15 +3,15 @@ package net.kikkirej.taskreminder.preferences;
 import java.io.IOException;
 import java.util.Properties;
 
-public class PreferenceManager {
+public class PreferenceManagerSingleton {
 	/** Die Instanz des Singletons PreferenceManager */
-	private static PreferenceManager instance;
+	private static PreferenceManagerSingleton instance;
 	private Properties properties;
 
 	/** 
 	 * Ein privater Konstruktor, damit die Instanz nur über die statische Methode aufgerufen wird.
 	 */
-	private PreferenceManager() {
+	private PreferenceManagerSingleton() {
 		PropertiesLoader propertiesLoader = new PropertiesLoader("config.properties");
 		try {
 			properties = propertiesLoader.load();
@@ -25,9 +25,9 @@ public class PreferenceManager {
 	/** 
 	 * Gibt eine Instanz von PreferenceManager zurück.
 	 */
-	public static synchronized PreferenceManager getInstance() {
+	public static synchronized PreferenceManagerSingleton getInstance() {
 		if (instance == null) {
-			instance = new PreferenceManager();
+			instance = new PreferenceManagerSingleton();
 		}
 		return instance;
 	}
