@@ -5,6 +5,7 @@ public interface PreferenceKeys {
 	public static final String CCMAIL = "ccmail"; 
 	public static final String PATHTOEXCELDOCUMENT = "pathtoexceldocument";
 	public static final String PATHTOMAPPINGDOCUMENT = "pathtomappingdocument";
+	public static final String IMPORTANTTASKS = "importanttasks";
 	public static final String SHEETNAME = "sheetname";
 	public static final String DATECOLUMN = "datecolumn";
 	public static final String NAMECELLS = "namecells";
