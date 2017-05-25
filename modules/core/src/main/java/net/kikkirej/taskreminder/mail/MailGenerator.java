@@ -22,12 +22,8 @@ public class MailGenerator {
 	}
 	
 	public MailObject getNewUserMail(TaskObject taskObject) throws IOException {
-		String mailUnknownUserPath = PreferenceManagerSingleton.getInstance().get(PreferenceKeys.MAILTEXTUNKOWNUSERPATH);
-		DefaultFileReader defaultFileReader = new DefaultFileReader(mailUnknownUserPath);
-		MailTextGenerator mailTextGenerator = new MailTextGenerator(defaultFileReader);
-		mailTextGenerator.addPlaceholder(new PlaceholderTask(taskObject));
-		mailTextGenerator.addPlaceholder(new PlaceholderUser(taskObject));
-		mailObject.message = mailTextGenerator.getText();
+		//DONE message
+		//DONE 
 		return mailObject;
 	}
 
