@@ -1,6 +1,7 @@
 package net.kikkirej.taskreminder.mail;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import org.junit.After;
 import org.junit.Before;
@@ -35,8 +36,12 @@ public class MailSubjectGeneratorTest {
 	@Test
 	public void handlePlaceholderTest() throws Exception{
 		Placeholder placeholder = Mockito.mock(Placeholder.class);
-		
+		String expected = "erwartet";
+		when(placeholder.replacePlatzhalter((String) any())).thenReturn(expected);
+		mailSubjectGenerator.addPlaceholder(placeholder);
+		String actual = mailSubjectGenerator.handlePlaceholder(expected);
 		assertEquals(expected, actual);
+		verify(placeholder).replacePlatzhalter((String) any());
 	}
 
 }
