@@ -1,0 +1,10 @@
+Sehr geehrte Damen und Herren,
+
+der  "{USER}" scheint heute nicht da zu sein. 
+
+Für diese Person liegt die Aufgabe "{TASK}" an.
+
+Viele Grüße,
+TaskReminder
+
+PS: Dies ist eine automatisch generierte Mail. Bitte antworten Sie nicht auf diese.
