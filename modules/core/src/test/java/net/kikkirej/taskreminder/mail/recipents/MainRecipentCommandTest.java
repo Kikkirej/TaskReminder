@@ -1,8 +1,8 @@
 package net.kikkirej.taskreminder.mail.recipents;
 
-import static org.junit.Assert.*;
-
-import static org.mockito.Mockito.*;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.apache.commons.mail.Email;
 import org.junit.After;

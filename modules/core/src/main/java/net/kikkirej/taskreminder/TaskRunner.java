@@ -2,8 +2,6 @@ package net.kikkirej.taskreminder;
 
 import java.io.IOException;
 
-import org.apache.commons.mail.EmailException;
-
 import net.kikkirej.taskreminder.mail.MailClient;
 import net.kikkirej.taskreminder.mail.MailGenerator;
 import net.kikkirej.taskreminder.model.MailObject;
