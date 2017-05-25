@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
+
+import net.kikkirej.taskreminder.mail.plcaeholder.Placeholder;
 
 public class MailSubjectGeneratorTest {
 
@@ -20,12 +23,19 @@ public class MailSubjectGeneratorTest {
 	}
 
 	@Test
-	public void getSubjectTest() {
+	public void getSubjectTest() throws Exception{
 		//Arrange
 		String expected = "empty String";
 		//Act
 		String actual = mailSubjectGenerator.getSubject(expected);
 		//Assert
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void handlePlaceholderTest() throws Exception{
+		Placeholder placeholder = Mockito.mock(Placeholder.class);
+		
 		assertEquals(expected, actual);
 	}
 
