@@ -6,15 +6,15 @@ import net.kikkirej.taskreminder.preferences.PreferenceManagerSingleton;
 
 public class TaskChecker {
 
-	private String[] csvValues;
+	private String[] importantTasks;
 
 	public TaskChecker() {
-		csvValues = PreferenceManagerSingleton.getInstance().getCSVValues(PreferenceKeys.IMPORTANTTASKS, ';');
+		importantTasks = PreferenceManagerSingleton.getInstance().getCSVValues(PreferenceKeys.IMPORTANTTASKS, ';');
 	}
 	
 	public boolean isTaskRelevant(TaskObject taskObject) {
-		for (String csvValue : csvValues) {
-			if(csvValue.equals(taskObject.taskname)){
+		for (String task : importantTasks) {
+			if(task.equals(taskObject.taskname)){
 				return true;
 			}
 		}
