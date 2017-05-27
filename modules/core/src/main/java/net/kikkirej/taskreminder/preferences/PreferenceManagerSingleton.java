@@ -36,6 +36,12 @@ public class PreferenceManagerSingleton {
 		return properties.getProperty(key);
 	}
 	
+	public Integer getIntValue(String key){
+		String property= get(key);
+		int parsedProperty = Integer.parseInt(property);
+		return parsedProperty;
+	}
+	
 	public String[] getCSVValues(String key, Character separator){
 		return get(key).split(separator.toString());
 	}

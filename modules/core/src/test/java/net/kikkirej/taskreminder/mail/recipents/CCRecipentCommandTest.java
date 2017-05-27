@@ -27,7 +27,7 @@ public class CCRecipentCommandTest {
 	}
 
 	@Test
-	public void addTotest() throws Exception{
+	public void addCCTest() throws Exception{
 		//Arrange
 		String recipent = "testtest";
 		when(mailMock.addCc(recipent)).thenReturn(null);

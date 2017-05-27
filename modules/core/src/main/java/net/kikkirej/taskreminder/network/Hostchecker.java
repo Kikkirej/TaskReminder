@@ -1,7 +1,6 @@
 package net.kikkirej.taskreminder.network;
 
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 public class Hostchecker {
 
