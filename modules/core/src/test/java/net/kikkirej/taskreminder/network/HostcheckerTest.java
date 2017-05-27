@@ -13,19 +13,23 @@ public class HostcheckerTest {
 	@Test
 	public void isHostOnlineTestLocalhost() {
 		hostchecker = new Hostchecker("localhost");
-		boolean expected = true;
 		boolean actual = hostchecker.isHostOnline();
-		
-		assertEquals(expected, actual);
+		assertTrue(actual);
 	}
 	
 	@Test
 	public void isHostOnlineTestOther() {
 		hostchecker = new Hostchecker("198.0.1.11");
-		boolean expected = false;
+		hostchecker.setTimeout(300);
 		boolean actual = hostchecker.isHostOnline();
-		
-		assertEquals(expected, actual);
+		assertFalse(actual);
 	}
-
+	
+	@Test
+	public void isHostOnlineTestOtherHostname() {
+		hostchecker = new Hostchecker("abcdefgh");
+		hostchecker.setTimeout(300);
+		boolean actual = hostchecker.isHostOnline();
+		assertFalse(actual);
+	}
 }

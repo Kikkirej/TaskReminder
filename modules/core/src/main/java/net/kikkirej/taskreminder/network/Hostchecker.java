@@ -6,8 +6,11 @@ public class Hostchecker {
 
 	String hostname;
 	
+	int timeout;
+	
 	public Hostchecker(String hostname) {
 		this.hostname = hostname;
+		timeout=10000;
 	}
 
 	public boolean isHostOnline() {
@@ -15,7 +18,7 @@ public class Hostchecker {
 		boolean reachable;
 		try {
 			InetAddress address = InetAddress.getByName(ip);
-			reachable = address.isReachable(10000);
+			reachable = address.isReachable(timeout);
 		} catch (Exception e) {
 			reachable = false;
 			e.printStackTrace();
@@ -25,6 +28,10 @@ public class Hostchecker {
 	
 	public String ipHandler(){
 		return hostname;
+	}
+	
+	void setTimeout(int timeout) {
+		this.timeout = timeout;
 	}
 
 }
