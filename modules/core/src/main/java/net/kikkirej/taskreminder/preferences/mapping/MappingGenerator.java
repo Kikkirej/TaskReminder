@@ -17,10 +17,20 @@ class MappingGenerator {
 	List<MappingObject> getMappings() throws MappingInvalidException{
 		List<MappingObject> mappings = new ArrayList<MappingObject>();
 		for (String line : mappingText) {
-			MappingObject mapping= getMappingObject(line);
-			mappings.add(mapping);
+			if(!isComment(line)){
+				MappingObject mapping= getMappingObject(line);
+				mappings.add(mapping);
+			}
 		}
 		return mappings;
+	}
+
+	private boolean isComment(String line) {
+		if(line.length()<2){
+			return true;
+		}
+		String substring = line.substring(0, 1);
+		return substring.equals("#");
 	}
 
 	private MappingObject getMappingObject(String line) throws MappingInvalidException {

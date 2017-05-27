@@ -1,0 +1,9 @@
+Hallo Administrator,
+
+"{USER}" hat heute die Aufgabe "{TASK}". Diese Benutzer ist dem System jedoch nicht bekannt und sollte in der Mapping-Tabelle eingetrrage werden.
+Außerdem sollte darauf geachtet werden, dass trotzdem jemand die Aufgabe wahr nimmt.
+
+Viele Grüße,
+TaskReminder
+
+PS: Dies ist eine automatisch generierte Mail. Bitte antworten Sie nicht auf diese.

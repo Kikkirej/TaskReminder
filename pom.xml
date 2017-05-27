@@ -9,4 +9,13 @@
   	
   	<module>solutions/deployment</module>
   </modules>
+  <scm>
+  	<connection>Git</connection>
+  	<developerConnection>Fabian Lemke | Carina Wagner</developerConnection>
+  	<url>https://github.com/Kikkirej/TaskReminder</url>
+  </scm>
+  <organization>
+  	<name>Kikkirej.net</name>
+  	<url>http://kikkirej.net</url>
+  </organization>
 </project>

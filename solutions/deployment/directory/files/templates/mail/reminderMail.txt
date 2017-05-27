@@ -1,0 +1,10 @@
+Hallo {USER},
+
+dies ist eine Erinnerung, dass du heute folgende Aufgabe hast: {TASK}
+
+Falls du diese Aufgabe nicht wahrnehmen kannst solltest du eine Vertretung suchen.
+
+Viele Grüße,
+TaskReminder
+
+PS: Dies ist eine automatisch generierte Mail. Bitte antworten Sie nicht auf diese.

@@ -57,6 +57,26 @@ public class MappingGeneratorTest {
 		assertEquals(expected2, mappings.get(1));
 	}
 	
+	@Test
+	public void commentTest() throws Exception{
+		ArrayList<String> mappingText = new ArrayList<String>();
+		mappingText.add("#Hans Mustermann, pc123, hans.mustermann@mail.de, true");
+		mappingText.add("Somebody, hostname, mail@mail, false");
+		mappingGenerator = new MappingGenerator(mappingText);
+		List<MappingObject> mappings = mappingGenerator.getMappings();
+		if(mappings == null || mappings.size()!= 1){
+			fail("Die Rückgabe ist fehlerhaft.");
+		}
+	}
+	
+	@Test
+	public void emptyLineTest() throws Exception{
+		ArrayList<String> mappingText = new ArrayList<String>();
+		mappingText.add("Somebody, hostname, mail@mail, false");
+		mappingText.add(" ");
+		mappingGenerator = new MappingGenerator(mappingText);
+	}
+	
 	public void tearDown() {
 		mappingGenerator = null;
 	}
