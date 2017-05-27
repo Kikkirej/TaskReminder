@@ -11,7 +11,7 @@ public class Taskreminder {
 		new Taskreminder().run(args);
 	}
 
-	private void run(String[] args) {
+	public void run(String[] args) {
 		List<TaskObject> tasks = new ExcelInterpreter().getTaskObjects();
 		checkTaskElements(tasks);
 	}
@@ -23,7 +23,6 @@ public class Taskreminder {
 		}
 	}
 
-	//TODO CRINGE MACH DAS OBJEKTORIENTIERT
 	private void checkTaskElement(TaskChecker taskChecker, TaskObject taskObject) {
 		if(taskChecker.isTaskRelevant(taskObject)){
 			new TaskRunner(taskObject).run();
