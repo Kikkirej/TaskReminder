@@ -1,14 +1,31 @@
 package net.kikkirej.taskreminder.network;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 public class Hostchecker {
 
+	String hostname;
+	
 	public Hostchecker(String hostname) {
-		// TODO Auto-generated constructor stub
+		this.hostname = hostname;
 	}
 
 	public boolean isHostOnline() {
-		// TODO Auto-generated method stub
-		return false;
+		String ip = ipHandler();
+		boolean reachable;
+		try {
+			InetAddress address = InetAddress.getByName(ip);
+			reachable = address.isReachable(10000);
+		} catch (Exception e) {
+			reachable = false;
+			e.printStackTrace();
+		}
+		return reachable;
+	}
+	
+	public String ipHandler(){
+		return hostname;
 	}
 
 }
