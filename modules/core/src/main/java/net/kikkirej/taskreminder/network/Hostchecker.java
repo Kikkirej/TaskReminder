@@ -21,7 +21,6 @@ public class Hostchecker {
 			reachable = address.isReachable(timeout);
 		} catch (Exception e) {
 			reachable = false;
-			e.printStackTrace();
 		}
 		return reachable;
 	}
@@ -29,7 +28,10 @@ public class Hostchecker {
 	public String ipHandler(){
 		return hostname;
 	}
-	
+
+	/**
+	 * just for Tests
+	 */
 	void setTimeout(int timeout) {
 		this.timeout = timeout;
 	}
