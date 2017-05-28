@@ -1,12 +1,13 @@
 package net.kikkirej.taskreminder.mail;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import net.kikkirej.taskreminder.mail.plcaeholder.Placeholder;
 
 public class MailSubjectGenerator {
 
-	ArrayList<Placeholder> placeholder;
+	private ArrayList<Placeholder> placeholder;
 	
 	public MailSubjectGenerator()
 	{
@@ -21,6 +22,10 @@ public class MailSubjectGenerator {
 		this.placeholder.add(placeholder);
 	}
 	
+	public void addPlaceholder(Collection<Placeholder> collection) {
+		this.placeholder.addAll(collection);
+	}
+
 	public String handlePlaceholder(String text) {
 		for (Placeholder placeholder : this.placeholder) {
 			text = placeholder.replacePlatzhalter(text);

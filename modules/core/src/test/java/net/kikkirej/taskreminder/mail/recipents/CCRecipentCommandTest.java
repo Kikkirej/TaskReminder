@@ -9,6 +9,8 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import net.kikkirej.taskreminder.mail.recipentmailconnector.CCRecipentCommand;
+
 public class CCRecipentCommandTest {
 
 	CCRecipentCommand ccrecipentcommand;

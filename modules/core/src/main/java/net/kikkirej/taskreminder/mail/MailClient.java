@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.apache.commons.mail.*;
 
-import net.kikkirej.taskreminder.mail.recipents.CCRecipentCommand;
-import net.kikkirej.taskreminder.mail.recipents.RecipentCommand;
-import net.kikkirej.taskreminder.mail.recipents.MainRecipentCommand;
+import net.kikkirej.taskreminder.mail.recipentmailconnector.CCRecipentCommand;
+import net.kikkirej.taskreminder.mail.recipentmailconnector.MainRecipentCommand;
+import net.kikkirej.taskreminder.mail.recipentmailconnector.RecipentCommand;
 import net.kikkirej.taskreminder.model.MailObject;
 import net.kikkirej.taskreminder.model.MailserverObject;
 

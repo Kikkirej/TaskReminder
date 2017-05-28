@@ -2,6 +2,7 @@ package net.kikkirej.taskreminder.mail;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import net.kikkirej.taskreminder.mail.plcaeholder.Placeholder;
@@ -22,6 +23,10 @@ class MailTextGenerator {
 	
 	public void addPlaceholder(Placeholder placeholder) {
 		this.placeholder.add(placeholder);
+	}
+	
+	public void addPlaceholder(Collection<Placeholder> collection){
+		this.placeholder.addAll(collection);
 	}
 
 	public String getText() throws IOException{

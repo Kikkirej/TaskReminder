@@ -6,11 +6,11 @@ import java.util.List;
 
 import net.kikkirej.taskreminder.model.MappingObject;
 
-public class SingleMappingMail extends RecipentAdder {
+public class SingleMappingAdder extends RecipentAdder {
 
 	private MappingObject mapping;
 
-	public SingleMappingMail(List<String> recipents, MappingObject mapping) {
+	public SingleMappingAdder(List<String> recipents, MappingObject mapping) {
 		super(recipents);
 		this.mapping = mapping;
 	}

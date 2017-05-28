@@ -1,4 +1,4 @@
-package net.kikkirej.taskreminder.mail.recipents;
+package net.kikkirej.taskreminder.mail.recipentmailconnector;
 
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;

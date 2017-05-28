@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import net.kikkirej.taskreminder.mail.recipentmailconnector.MainRecipentCommand;
+
 public class MainRecipentCommandTest {
 
 	MainRecipentCommand mainRecipentCommand;

@@ -31,14 +31,14 @@ public class TaskRunner implements Runnable {
 		}
 	}
 
-	private MailObject getMail() throws IOException {
+	private MailObject getMail() throws Exception {
 		MailGenerator mailGenerator = new MailGenerator();
 		if(mapping == null){
 			return mailGenerator.getNewUserMail(taskObject);
 		}
 		Hostchecker hostchecker = new Hostchecker(mapping.hostname);
 		if(hostchecker.isHostOnline()){
-			return mailGenerator.getSimpleReminder(mapping, taskObject.taskname);
+			return mailGenerator.getSimpleReminder(mapping, taskObject);
 		}else{
 			return mailGenerator.getAlertmail(taskObject);
 		}
