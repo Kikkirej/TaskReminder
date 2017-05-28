@@ -13,7 +13,8 @@ public class MailGenerator {
 
 	public MailGenerator() {
 		mailObject = new MailObject();
-		
+		MailServerGenerator mailServerGenerator = new MailServerGenerator();
+		mailObject.mailserver = mailServerGenerator.getServer();
 	}
 	
 	public MailObject getNewUserMail(TaskObject taskObject) throws IOException {

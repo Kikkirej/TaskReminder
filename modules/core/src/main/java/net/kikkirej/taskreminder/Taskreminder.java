@@ -4,14 +4,24 @@ import java.util.List;
 
 import net.kikkirej.taskreminder.excel.ExcelInterpreter;
 import net.kikkirej.taskreminder.model.TaskObject;
+import net.kikkirej.taskreminder.preferences.PreferenceManagerSingleton;
 
-public class Taskreminder {
+public class Taskreminder implements Runnable {
 	
 	public static void main(String[] args) {
-		new Taskreminder().run(args);
+		new Taskreminder(args).run();
 	}
 
-	public void run(String[] args) {
+	public Taskreminder(String[] args) {
+		if(args.length>0){
+			PreferenceManagerSingleton.setPathToFile(args[0]);
+		}
+	}
+	
+	public Taskreminder() {
+	}
+
+	public void run() {
 		List<TaskObject> tasks = new ExcelInterpreter().getTaskObjects();
 		checkTaskElements(tasks);
 	}

@@ -7,12 +7,17 @@ public class PreferenceManagerSingleton {
 	/** Die Instanz des Singletons PreferenceManager */
 	private static PreferenceManagerSingleton instance;
 	private Properties properties;
+	private static String pathToFile =  "../conf/config.properties";;
+	
+	public static void setPathToFile(String pathToFile) {
+		PreferenceManagerSingleton.pathToFile = pathToFile;
+	}
 
 	/** 
 	 * Ein privater Konstruktor, damit die Instanz nur über die statische Methode aufgerufen wird.
 	 */
 	private PreferenceManagerSingleton() {
-		PropertiesLoader propertiesLoader = new PropertiesLoader("../conf/config.properties");
+		PropertiesLoader propertiesLoader = new PropertiesLoader(pathToFile);
 		try {
 			properties = propertiesLoader.load();
 		} catch (IOException e) {

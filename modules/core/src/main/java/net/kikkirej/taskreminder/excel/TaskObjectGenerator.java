@@ -6,7 +6,7 @@ import java.util.List;
 
 import net.kikkirej.taskreminder.model.TaskObject;
 
-public class TaskObjectGenerator {
+class TaskObjectGenerator {
 
 	private ExcelDocument document;
 	

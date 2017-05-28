@@ -8,5 +8,5 @@ public class MainRecipentCommand implements RecipentCommand {
 	public Email add(Email mail, String recipent) throws EmailException {
 		return mail.addTo(recipent);
 	}
-
+	
 }

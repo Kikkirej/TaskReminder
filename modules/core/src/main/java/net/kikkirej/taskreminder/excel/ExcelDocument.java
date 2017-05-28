@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 
+import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -18,8 +19,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import net.kikkirej.taskreminder.exceptions.DateNotFoundException;
 
-public class ExcelDocument implements Closeable{
+class ExcelDocument implements Closeable{
 
+	Logger logger=Logger.getLogger(ExcelDocument.class);
+	
 	private XSSFWorkbook workbook;
 	private XSSFSheet sheet;
 
@@ -29,16 +32,17 @@ public class ExcelDocument implements Closeable{
 
 	public ExcelDocument(InputStream inputStream) throws IOException {
 		workbook = new XSSFWorkbook(inputStream);
-
-		workbook.close();
+		logger.info("Excel-workbook initalized");
 	}
 
 	public void close() throws IOException {
+		logger.debug("Workbook closed");
 		workbook.close();
 	}
 
 	public void selectSheet(String name){
 		sheet = workbook.getSheet(name);
+		logger.debug("Selected Sheet " + name);
 	}
 
 	public void setCheckingColumns(Integer firstColumnIndex, Integer lastColumnIndex){
@@ -51,7 +55,10 @@ public class ExcelDocument implements Closeable{
 		XSSFCell xssfCell = xssfRow.getCell(cell);
 		if(xssfCell != null){
 			String cellValue = xssfCell.getStringCellValue();
+			logger.debug("Cell-Value:" +  cellValue);
 			return cellValue;
+		}else{
+			logger.warn("Die Zelle an der Position " + row + "/" + cell + " hatte keinen Inhalt."); 
 		}
 		return "";
 	}

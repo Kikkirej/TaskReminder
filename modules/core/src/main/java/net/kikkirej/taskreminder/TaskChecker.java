@@ -14,7 +14,7 @@ public class TaskChecker {
 	
 	public boolean isTaskRelevant(TaskObject taskObject) {
 		for (String task : importantTasks) {
-			if(task.equals(taskObject.taskname)){
+			if(task.replace(" ", "").equals(taskObject.taskname)){
 				return true;
 			}
 		}
